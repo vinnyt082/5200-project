@@ -211,38 +211,20 @@ def render() -> None:
         unsafe_allow_html=True,
     )
 
-    r1, r2 = st.columns(2, gap="large")
-    with r1:
-        st.markdown(
-            '<p class="s2-muted"><strong>Representative terrain by region</strong><br/>'
-            "Country-level median from the elevation-context table.</p>",
-            unsafe_allow_html=True,
+    st.markdown(
+        '<p class="s2-muted"><strong>Linked terrain views</strong><br/>'
+        "Hover a region in one panel to read both. Use the in-chart focus buttons to highlight a single region across both charts.</p>",
+        unsafe_allow_html=True,
+    )
+    if not elev_med.empty and elev_med.notna().any() and not cup.empty and "altitude" in cup.columns and "region" in cup.columns:
+        fig_linked = ch.fig_linked_terrain_altitude(
+            elev_med.dropna(),
+            cup,
+            title="Terrain and lot-altitude by region (linked view)",
         )
-        if not elev_med.empty and elev_med.notna().any():
-            fig_e = ch.fig_horizontal_bar_regions(
-                elev_med.dropna(),
-                title="Representative terrain by region",
-                xlabel="Metres above sea level",
-                x_format="{:.0f} m",
-            )
-            st.plotly_chart(fig_e, use_container_width=True, key="compare_rep_elev", config=PLOTLY_CONFIG)
-        else:
-            st.caption("Elevation context not available.")
-
-    with r2:
-        st.markdown(
-            '<p class="s2-muted"><strong>Lot altitude spread by region</strong><br/>'
-            "Market altitudes reported on lots in this cupping sample.</p>",
-            unsafe_allow_html=True,
-        )
-        if not cup.empty and "altitude" in cup.columns:
-            fig_b = ch.fig_boxplot_altitude_by_region(
-                cup,
-                title="Lot altitude spread by region",
-            )
-            st.plotly_chart(fig_b, use_container_width=True, key="compare_altitude_box", config=PLOTLY_CONFIG)
-        else:
-            st.caption("No altitude field in cup data.")
+        st.plotly_chart(fig_linked, use_container_width=True, key="compare_terrain_linked", config=PLOTLY_CONFIG)
+    else:
+        st.caption("Insufficient elevation context or lot-altitude data for linked terrain view.")
 
     st.markdown(
         """

@@ -7,6 +7,7 @@ from typing import Sequence
 import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
+from plotly.subplots import make_subplots
 
 from app.plotly_theme import plotly_layout_base
 
@@ -212,3 +213,144 @@ def fig_production_share_bars(production: pd.Series, *, title: str) -> go.Figure
         value_scale=1.0,
         x_format="{:.0%}",
     )
+
+
+def fig_linked_terrain_altitude(
+    elev_med: pd.Series,
+    cup: pd.DataFrame,
+    *,
+    title: str = "Terrain and lot-altitude, linked by region",
+) -> go.Figure:
+    """
+    Side-by-side linked view:
+    - left: representative terrain by region (bar)
+    - right: lot altitude spread by region (box)
+    Click legend items to isolate/highlight a region in both panels.
+    """
+    regions = [r for r in ["Americas", "Africa", "Asia-Pacific"] if r in list(elev_med.index)]
+    fig = make_subplots(
+        rows=1,
+        cols=2,
+        horizontal_spacing=0.1,
+        subplot_titles=("Representative terrain", "Lot altitude spread"),
+    )
+
+    trace_regions: list[str] = []
+    for reg in regions:
+        c = REGION_COLORS.get(reg, "#94a3b8")
+        v = float(elev_med.get(reg)) if pd.notna(elev_med.get(reg)) else None
+        if v is not None:
+            fig.add_trace(
+                go.Bar(
+                    x=[reg],
+                    y=[v],
+                    name=reg,
+                    legendgroup=reg,
+                    showlegend=True,
+                    marker=dict(color=c, line=dict(width=0)),
+                    hovertemplate=f"{reg}<br>Representative terrain: %{{y:.0f}} m<extra></extra>",
+                ),
+                row=1,
+                col=1,
+            )
+            trace_regions.append(reg)
+
+        y = cup.loc[cup["region"] == reg, "altitude"].dropna() if "region" in cup.columns and "altitude" in cup.columns else pd.Series(dtype=float)
+        if not y.empty:
+            fig.add_trace(
+                go.Box(
+                    x=[reg] * len(y),
+                    y=y,
+                    name=reg,
+                    legendgroup=reg,
+                    showlegend=False,
+                    marker_color=c,
+                    line_color=c,
+                    boxmean=False,
+                    hovertemplate=f"{reg}<br>Lot altitude: %{{y:.0f}} m<extra></extra>",
+                ),
+                row=1,
+                col=2,
+            )
+            trace_regions.append(reg)
+
+    def _opacity_for(target: str | None) -> list[float]:
+        if target is None:
+            return [1.0] * len(trace_regions)
+        return [1.0 if r == target else 0.16 for r in trace_regions]
+
+    buttons = [
+        dict(
+            label="All regions",
+            method="restyle",
+            args=[{"opacity": _opacity_for(None)}],
+        )
+    ]
+    for reg in regions:
+        buttons.append(
+            dict(
+                label=f"Focus {reg}",
+                method="restyle",
+                args=[{"opacity": _opacity_for(reg)}],
+            )
+        )
+
+    fig.update_layout(
+        **plotly_layout_base(height=390),
+        title=dict(text=title, font=dict(size=14, color="#e2e8f0"), y=0.97, yanchor="top"),
+        barmode="group",
+        legend=dict(orientation="h", yanchor="bottom", y=1.03, xanchor="right", x=1.0, title_text="Click region to focus"),
+        hoversubplots="axis",
+        updatemenus=[
+            dict(
+                type="buttons",
+                direction="right",
+                buttons=buttons,
+                showactive=True,
+                x=0,
+                xanchor="left",
+                y=1.25,
+                yanchor="top",
+                pad=dict(r=6, t=4),
+                bgcolor="rgba(20, 24, 33, 0.82)",
+                bordercolor="rgba(148,163,184,0.28)",
+                font=dict(color="#cbd5e1", size=11),
+            )
+        ],
+    )
+    fig.update_layout(margin=dict(l=56, r=28, t=100, b=48))
+    fig.update_xaxes(
+        gridcolor="#1e293b",
+        zeroline=False,
+        linecolor="#334155",
+        categoryorder="array",
+        categoryarray=regions,
+        row=1,
+        col=1,
+    )
+    fig.update_xaxes(
+        gridcolor="#1e293b",
+        zeroline=False,
+        linecolor="#334155",
+        categoryorder="array",
+        categoryarray=regions,
+        row=1,
+        col=2,
+    )
+    fig.update_yaxes(
+        title_text="Elevation (m)",
+        gridcolor="#1e293b",
+        zeroline=False,
+        linecolor="#334155",
+        row=1,
+        col=1,
+    )
+    fig.update_yaxes(
+        title_text="Lot altitude (m)",
+        gridcolor="#1e293b",
+        zeroline=False,
+        linecolor="#334155",
+        row=1,
+        col=2,
+    )
+    return fig
