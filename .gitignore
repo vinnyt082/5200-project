@@ -6,6 +6,6 @@
 # keep data in repo for Streamlit runtime
 # data/
 
-ignore only large/raw/cache artifacts
+#ignore only large/raw/cache artifacts
 data/raw/elevation/cache/
 data/raw/**/*.zip
