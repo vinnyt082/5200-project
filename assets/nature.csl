@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Minimal placeholder CSL file.
+  Replace this with the full Nature CSL from the official CSL repository:
+  https://github.com/citation-style-language/styles
+-->
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0">
+  <info>
+    <title>Nature (placeholder)</title>
+    <id>http://www.zotero.org/styles/nature-placeholder</id>
+  </info>
+  <citation>
+    <layout>
+      <text variable="author"/>
+      <text value=" "/>
+      <text variable="year"/>
+      <text value=". "/>
+      <text variable="title"/>
+    </layout>
+  </citation>
+  <bibliography>
+    <layout>
+      <text variable="author"/>
+      <text value=" "/>
+      <text variable="year"/>
+      <text value=". "/>
+      <text variable="title"/>
+    </layout>
+  </bibliography>
+</style>
+

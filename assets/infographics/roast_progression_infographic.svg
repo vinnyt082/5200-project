@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 640" preserveAspectRatio="xMidYMid meet" width="100%" style="max-width:1180px;height:auto;display:block;margin:0 auto;">
+  <!-- roast-infographic:v2-polished -->
+  <defs>
+    <linearGradient id="pathGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#769c76"/><stop offset="20%" stop-color="#c5b774"/><stop offset="45%" stop-color="#ae7b4b"/><stop offset="70%" stop-color="#694028"/><stop offset="100%" stop-color="#161210"/>
+    </linearGradient>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <style>
+      .title { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; font-size: 26px; font-weight: 650; fill: #e8ecf1; letter-spacing: 0.02em; }
+      .subtitle { font-family: ui-sans-serif, system-ui, sans-serif; font-size: 14.5px; fill: #94a3b8; font-weight: 400; }
+      .bandLabel { font-family: ui-sans-serif, system-ui, sans-serif; font-size: 13px; fill: #a8b0bd; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
+      .callout { font-family: ui-sans-serif, system-ui, sans-serif; font-size: 12px; fill: #cbd5e1; }
+      .key { font-family: ui-sans-serif, system-ui, sans-serif; font-size: 13.5px; fill: #d1d7e0; }
+      .key strong { fill: #f1f5f9; font-weight: 650; }
+      .axisGuide { font-family: ui-sans-serif, system-ui, sans-serif; font-size: 10.5px; fill: #8b95a8; letter-spacing: 0.02em; }
+      .axisStage { font-family: ui-sans-serif, system-ui, sans-serif; font-size: 8.8px; fill: #5c6675; }
+      .bandHint { font-family: ui-sans-serif, system-ui, sans-serif; font-size: 11px; fill: #7a8494; }
+      .sweetMain { font-family: ui-sans-serif, system-ui, sans-serif; font-size: 13px; font-weight: 650; fill: #fde68a; }
+      .sweetSub { font-family: ui-sans-serif, system-ui, sans-serif; font-size: 9.6px; fill: #a8a29e; font-weight: 500; }
+    </style>
+  </defs>
+
+  <rect width="1180" height="640" fill="#0b1220"/>
+  <rect x="40" y="36" width="1100" height="568" rx="14" fill="#0f172a" stroke="rgba(148,163,184,0.12)" stroke-width="1"/>
+
+  <text x="72" y="92" class="title">Roast progression</text>
+  <text x="72" y="122" class="subtitle">Origin shapes potential in the field; roast level is decided at the roaster.</text>
+
+  <!-- Origin vs roast key -->
+  <text x="72" y="158" class="key"><tspan fill="#7dd3a0">Origin</tspan> — acidity, aroma, structure, flavor tendencies.</text>
+  <text x="72" y="180" class="key"><tspan fill="#fdba74">Roast</tspan> — caramelization, bitterness, body, smoke/char; how much origin remains visible.</text>
+
+  <!-- Band → curve alignment (centers track the diagonal) -->
+  <line x1="252" y1="486" x2="268" y2="378" stroke="rgba(148,163,184,0.14)" stroke-width="1" stroke-dasharray="3 5"/>
+  <line x1="570" y1="486" x2="588" y2="318" stroke="rgba(148,163,184,0.14)" stroke-width="1" stroke-dasharray="3 5"/>
+  <line x1="878" y1="486" x2="898" y2="268" stroke="rgba(148,163,184,0.14)" stroke-width="1" stroke-dasharray="3 5"/>
+
+  <!-- Sweet-spot reading zone: first crack → development → approach second crack (guide, not an optimum) -->
+  <ellipse cx="628" cy="292" rx="248" ry="68" transform="rotate(-11.5 628 292)" fill="rgba(251,191,36,0.072)" stroke="rgba(251,191,36,0.26)" stroke-width="1"/>
+  <text x="628" y="288" text-anchor="middle" class="sweetMain">Sweet spot</text>
+  <text x="628" y="304" text-anchor="middle" class="sweetSub">origin most visible</text>
+
+  <!-- Roast level bands -->
+  <rect x="96" y="486" width="312" height="56" rx="8" fill="rgba(125,211,160,0.08)" stroke="rgba(125,211,160,0.18)" stroke-width="1"/>
+  <text x="252" y="514" text-anchor="middle" class="bandLabel" fill="#86efac">Light</text>
+  <text x="252" y="532" text-anchor="middle" class="bandHint">Clarity · acidity</text>
+  <rect x="416" y="486" width="308" height="56" rx="8" fill="rgba(251,191,36,0.07)" stroke="rgba(251,191,36,0.16)" stroke-width="1"/>
+  <text x="570" y="514" text-anchor="middle" class="bandLabel" fill="#fcd34d">Medium</text>
+  <text x="570" y="532" text-anchor="middle" class="bandHint">Sweetness · balance</text>
+  <rect x="732" y="486" width="292" height="56" rx="8" fill="rgba(248,113,113,0.06)" stroke="rgba(248,113,113,0.15)" stroke-width="1"/>
+  <text x="878" y="514" text-anchor="middle" class="bandLabel" fill="#fca5a5">Dark</text>
+  <text x="878" y="532" text-anchor="middle" class="bandHint">Body · smoke</text>
+
+  <!-- Wide soft corridor under path -->
+  <path d="M 110.0,410.0 L 129.2,408.3 L 148.3,406.0 L 167.5,403.4 L 186.7,400.6 L 205.8,397.6 L 225.0,394.4 L 244.2,391.1 L 263.3,387.8 L 282.5,384.3 L 301.7,380.7 L 320.8,377.0 L 340.0,373.3 L 359.2,369.5 L 378.3,365.7 L 397.5,361.8 L 416.7,357.9 L 435.8,353.9 L 455.0,349.9 L 474.2,345.9 L 493.3,341.8 L 512.5,337.8 L 531.7,333.7 L 550.8,329.6 L 570.0,325.5 L 589.2,321.4 L 608.3,317.3 L 627.5,313.3 L 646.7,309.2 L 665.8,305.1 L 685.0,301.1 L 704.2,297.1 L 723.3,293.1 L 742.5,289.1 L 761.7,285.1 L 780.8,281.2 L 800.0,277.4 L 819.2,273.5 L 838.3,269.8 L 857.5,266.0 L 876.7,262.3 L 895.8,258.7 L 915.0,255.1 L 934.2,251.6 L 953.3,248.1 L 972.5,244.7 L 991.7,241.4 L 1010.8,238.2 L 1030.0,235.0" fill="none" stroke="url(#pathGrad)" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" opacity="0.16" filter="url(#softGlow)"/>
+  <path d="M 110.0,410.0 L 129.2,408.3 L 148.3,406.0 L 167.5,403.4 L 186.7,400.6 L 205.8,397.6 L 225.0,394.4 L 244.2,391.1 L 263.3,387.8 L 282.5,384.3 L 301.7,380.7 L 320.8,377.0 L 340.0,373.3 L 359.2,369.5 L 378.3,365.7 L 397.5,361.8 L 416.7,357.9 L 435.8,353.9 L 455.0,349.9 L 474.2,345.9 L 493.3,341.8 L 512.5,337.8 L 531.7,333.7 L 550.8,329.6 L 570.0,325.5 L 589.2,321.4 L 608.3,317.3 L 627.5,313.3 L 646.7,309.2 L 665.8,305.1 L 685.0,301.1 L 704.2,297.1 L 723.3,293.1 L 742.5,289.1 L 761.7,285.1 L 780.8,281.2 L 800.0,277.4 L 819.2,273.5 L 838.3,269.8 L 857.5,266.0 L 876.7,262.3 L 895.8,258.7 L 915.0,255.1 L 934.2,251.6 L 953.3,248.1 L 972.5,244.7 L 991.7,241.4 L 1010.8,238.2 L 1030.0,235.0" fill="none" stroke="url(#pathGrad)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity="0.58"/>
+  <path d="M 110.0,410.0 L 129.2,408.3 L 148.3,406.0 L 167.5,403.4 L 186.7,400.6 L 205.8,397.6 L 225.0,394.4 L 244.2,391.1 L 263.3,387.8 L 282.5,384.3 L 301.7,380.7 L 320.8,377.0 L 340.0,373.3 L 359.2,369.5 L 378.3,365.7 L 397.5,361.8 L 416.7,357.9 L 435.8,353.9 L 455.0,349.9 L 474.2,345.9 L 493.3,341.8 L 512.5,337.8 L 531.7,333.7 L 550.8,329.6 L 570.0,325.5 L 589.2,321.4 L 608.3,317.3 L 627.5,313.3 L 646.7,309.2 L 665.8,305.1 L 685.0,301.1 L 704.2,297.1 L 723.3,293.1 L 742.5,289.1 L 761.7,285.1 L 780.8,281.2 L 800.0,277.4 L 819.2,273.5 L 838.3,269.8 L 857.5,266.0 L 876.7,262.3 L 895.8,258.7 L 915.0,255.1 L 934.2,251.6 L 953.3,248.1 L 972.5,244.7 L 991.7,241.4 L 1010.8,238.2 L 1030.0,235.0" fill="none" stroke="#1e293b" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.38"/>
+
+  <g transform="translate(128.4,408.4) rotate(-6.27)">
+    <ellipse cx="-4.25" cy="0" rx="5.26" ry="3.44" fill="#7e9f76" opacity="0.96"/>
+    <ellipse cx="4.25" cy="0" rx="5.26" ry="3.44" fill="#7e9f76" opacity="0.96"/>
+    <path d="M 0,-3.34 Q 0,0 0,3.34" stroke="rgba(0,0,0,0.35)" stroke-width="0.557" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <g transform="translate(238.8,392.1) rotate(-9.84)">
+    <ellipse cx="-4.31" cy="0" rx="5.34" ry="3.49" fill="#b4b477" opacity="0.96"/>
+    <ellipse cx="4.31" cy="0" rx="5.34" ry="3.49" fill="#b4b477" opacity="0.96"/>
+    <path d="M 0,-3.39 Q 0,0 0,3.39" stroke="rgba(0,0,0,0.35)" stroke-width="0.565" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <g transform="translate(367.6,367.8) rotate(-11.33)">
+    <ellipse cx="-4.38" cy="0" rx="5.43" ry="3.55" fill="#c4a668" opacity="0.96"/>
+    <ellipse cx="4.38" cy="0" rx="5.43" ry="3.55" fill="#c4a668" opacity="0.96"/>
+    <path d="M 0,-3.44 Q 0,0 0,3.44" stroke="rgba(0,0,0,0.35)" stroke-width="0.574" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <g transform="translate(496.4,341.2) rotate(-11.95)">
+    <ellipse cx="-4.45" cy="0" rx="5.51" ry="3.61" fill="#b58450" opacity="0.96"/>
+    <ellipse cx="4.45" cy="0" rx="5.51" ry="3.61" fill="#b58450" opacity="0.96"/>
+    <path d="M 0,-3.50 Q 0,0 0,3.50" stroke="rgba(0,0,0,0.35)" stroke-width="0.583" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <g transform="translate(625.2,313.7) rotate(-12.01)">
+    <ellipse cx="-4.46" cy="0" rx="5.53" ry="3.61" fill="#925d39" opacity="0.96"/>
+    <ellipse cx="4.46" cy="0" rx="5.53" ry="3.61" fill="#925d39" opacity="0.96"/>
+    <path d="M 0,-3.51 Q 0,0 0,3.51" stroke="rgba(0,0,0,0.35)" stroke-width="0.585" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <g transform="translate(754.0,286.7) rotate(-11.60)">
+    <ellipse cx="-4.39" cy="0" rx="5.44" ry="3.56" fill="#694028" opacity="0.96"/>
+    <ellipse cx="4.39" cy="0" rx="5.44" ry="3.56" fill="#694028" opacity="0.96"/>
+    <path d="M 0,-3.45 Q 0,0 0,3.45" stroke="rgba(0,0,0,0.35)" stroke-width="0.575" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <g transform="translate(882.8,261.2) rotate(-10.75)">
+    <ellipse cx="-4.32" cy="0" rx="5.35" ry="3.50" fill="#3a261a" opacity="0.96"/>
+    <ellipse cx="4.32" cy="0" rx="5.35" ry="3.50" fill="#3a261a" opacity="0.96"/>
+    <path d="M 0,-3.40 Q 0,0 0,3.40" stroke="rgba(0,0,0,0.35)" stroke-width="0.566" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <g transform="translate(993.2,241.2) rotate(-9.69)">
+    <ellipse cx="-4.26" cy="0" rx="5.28" ry="3.45" fill="#1f1712" opacity="0.96"/>
+    <ellipse cx="4.26" cy="0" rx="5.28" ry="3.45" fill="#1f1712" opacity="0.96"/>
+    <path d="M 0,-3.35 Q 0,0 0,3.35" stroke="rgba(0,0,0,0.35)" stroke-width="0.558" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- Conceptual heat axis (ballpark °F — not a control chart); extra canvas width for label + title breathing room -->
+  <g id="roastDevelopmentGuide" opacity="0.92">
+    <line x1="1088" y1="438" x2="1088" y2="200" stroke="rgba(148,163,184,0.38)" stroke-width="1"/>
+    <polygon points="1088,192 1082,206 1094,206" fill="rgba(148,163,184,0.5)"/>
+    <line x1="1088" y1="426" x2="1098" y2="426" stroke="rgba(148,163,184,0.28)" stroke-width="1"/>
+    <line x1="1088" y1="382" x2="1098" y2="382" stroke="rgba(148,163,184,0.28)" stroke-width="1"/>
+    <line x1="1088" y1="338" x2="1098" y2="338" stroke="rgba(148,163,184,0.28)" stroke-width="1"/>
+    <line x1="1088" y1="294" x2="1098" y2="294" stroke="rgba(148,163,184,0.28)" stroke-width="1"/>
+    <line x1="1088" y1="250" x2="1098" y2="250" stroke="rgba(148,163,184,0.28)" stroke-width="1"/>
+    <line x1="1088" y1="212" x2="1098" y2="212" stroke="rgba(148,163,184,0.28)" stroke-width="1"/>
+    <text x="1074" y="432" text-anchor="end"><tspan class="axisGuide">300–320°F</tspan><tspan class="axisStage" x="1074" dy="13">Green / drying</tspan></text>
+    <text x="1074" y="388" text-anchor="end"><tspan class="axisGuide">330–350°F</tspan><tspan class="axisStage" x="1074" dy="13">Yellowing</tspan></text>
+    <text x="1074" y="344" text-anchor="end"><tspan class="axisGuide">356–401°F</tspan><tspan class="axisStage" x="1074" dy="13">First crack · sweet-spot window</tspan></text>
+    <text x="1074" y="300" text-anchor="end"><tspan class="axisGuide">401–419°F</tspan><tspan class="axisStage" x="1074" dy="13">Development</tspan></text>
+    <text x="1074" y="256" text-anchor="end"><tspan class="axisGuide">428–437°F</tspan><tspan class="axisStage" x="1074" dy="13">Second crack / dark</tspan></text>
+    <text x="1074" y="218" text-anchor="end"><tspan class="axisGuide">437°F+</tspan><tspan class="axisStage" x="1074" dy="13">Terminal / carbon</tspan></text>
+    <text x="1080" y="180" text-anchor="end" class="axisGuide" font-size="9.8" fill="#94a3b8" letter-spacing="0.04em">
+      <tspan x="1080" dy="0">Roast development</tspan>
+      <tspan x="1080" dy="14">/ temperature</tspan>
+    </text>
+  </g>
+
+  <!-- Stage labels (sparse progression) -->
+  <text x="108" y="356" class="callout">Green / drying</text>
+  <text x="222" y="388" class="callout">Yellowing</text>
+  <text x="378" y="358" class="callout">First crack</text>
+  <text x="632" y="248" class="callout">Development</text>
+  <text x="772" y="232" class="callout">Second crack</text>
+  <text x="912" y="252" class="callout">Dark / carbon</text>
+</svg>

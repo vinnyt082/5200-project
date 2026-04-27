@@ -1,0 +1,4 @@
+# Multipage apps auto-list every script in `pages/` in the sidebar. This project uses a
+# single "Chapters" block (st.page_link) instead; hide the duplicate default navigation.
+[client]
+showSidebarNavigation = false

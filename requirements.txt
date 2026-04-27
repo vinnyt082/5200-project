@@ -1,0 +1,10 @@
+quarto
+pandas
+numpy
+matplotlib
+plotly>=5.18
+streamlit
+pydeck
+geopandas
+rasterio
+
