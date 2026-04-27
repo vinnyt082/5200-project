@@ -1,0 +1,23 @@
+country,us_import_relevance,us_import_tonnes,notes
+Brazil,1.00,500000,Major U.S. supplier baseline placeholder
+Colombia,0.85,420000,Major U.S. supplier baseline placeholder
+Guatemala,0.55,230000,Important Central American supplier placeholder
+Honduras,0.60,240000,Important Central American supplier placeholder
+Peru,0.35,150000,Moderate U.S. supply placeholder
+Mexico,0.30,120000,Moderate U.S. supply placeholder
+Costa Rica,0.18,70000,Smaller specialty-oriented supplier placeholder
+Nicaragua,0.20,80000,Smaller supplier placeholder
+El Salvador,0.16,60000,Smaller supplier placeholder
+Panama,0.10,25000,Small high-value supplier placeholder
+Ethiopia,0.45,160000,Key African specialty supplier placeholder
+Kenya,0.10,30000,Smaller specialty supplier placeholder
+Uganda,0.25,90000,Moderate supplier placeholder
+Tanzania,0.08,25000,Smaller supplier placeholder
+Madagascar,0.02,5000,Minimal supplier placeholder
+Indonesia,0.28,110000,Moderate Asian supplier placeholder
+Vietnam,0.40,180000,Major robusta-linked supplier placeholder
+Thailand,0.06,12000,Small supplier placeholder
+Laos,0.03,7000,Small supplier placeholder
+Myanmar,0.01,2000,Minimal supplier placeholder
+Taiwan,0.02,4000,Specialty micro-volume placeholder
+United States (Hawaii),0.01,1000,Domestic-origin specialty placeholder

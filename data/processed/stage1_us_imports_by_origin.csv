@@ -1,0 +1,11 @@
+country,region,import_value_or_quantity,normalized_route_weight,source_note
+Brazil,Americas,123456789,1.0,raw_trade_file:us_imports_by_origin.csv
+Colombia,Americas,98765432,0.894427194622346,raw_trade_file:us_imports_by_origin.csv
+Vietnam,Asia-Pacific,65432000,0.7280104427980363,raw_trade_file:us_imports_by_origin.csv
+Honduras,Americas,54321000,0.6633250364670408,raw_trade_file:us_imports_by_origin.csv
+Guatemala,Americas,43210000,0.5916088261554329,raw_trade_file:us_imports_by_origin.csv
+Ethiopia,Africa,21000000,0.41243181442259036,raw_trade_file:us_imports_by_origin.csv
+Indonesia,Asia-Pacific,18000000,0.381837663578097,raw_trade_file:us_imports_by_origin.csv
+Mexico,Americas,17000000,0.3710795079940012,raw_trade_file:us_imports_by_origin.csv
+Peru,Americas,15000000,0.34856850274465423,raw_trade_file:us_imports_by_origin.csv
+Costa Rica,Americas,12000000,0.3117691467809475,raw_trade_file:us_imports_by_origin.csv
